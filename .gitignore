@@ -1,0 +1,35 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Dependencies (none currently, but future-proof)
+node_modules/
+vendor/
+composer.lock
+package-lock.json
+
+# Build artifacts
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+debug.log
+error_log
+
+# Environment
+.env
+.env.local
