@@ -1,0 +1,30 @@
+name = "vs-orders"
+compatibility_date = "2025-09-01"
+pages_build_output_dir = "./public"
+
+# Create with: npx wrangler d1 create vs-orders  → paste the database_id here.
+[[d1_databases]]
+binding = "DB"
+database_name = "vs-orders"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+# Product images. Create with: npx wrangler r2 bucket create vs-orders-media
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "vs-orders-media"
+
+# Non-secret configuration. Secrets (Stripe, Resend, MailerLite keys) go in
+# `wrangler pages secret put NAME` — see README.md.
+[vars]
+TIMEZONE = "America/New_York"
+EMAIL_FROM = "Visit Sicily NYC <orders@visitsicilynyc.com>"
+EMAIL_REPLY_TO = "orders@visitsicilynyc.com"
+# Cloudflare Access: team domain (e.g. "myteam.cloudflareaccess.com") and the
+# Application Audience (AUD) tag of the Access application protecting /admin and /api/admin.
+ACCESS_TEAM_DOMAIN = ""
+ACCESS_AUD = ""
+# Comma-separated emails that are always admins (bootstrap; more users can be added from the panel).
+ADMIN_EMAILS = ""
+# Comma-separated origins allowed to call the public API from another site (embedding). Empty = same-origin only.
+ALLOWED_ORIGINS = ""

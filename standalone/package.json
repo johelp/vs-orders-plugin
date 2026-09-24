@@ -1,0 +1,20 @@
+{
+  "name": "vs-orders-standalone",
+  "version": "2.0.0",
+  "private": true,
+  "description": "VS Orders — weekly delivery ordering system on Cloudflare Pages + D1 (no WordPress).",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev --port 8788",
+    "db:migrate:local": "wrangler d1 migrations apply vs-orders --local",
+    "db:migrate:remote": "wrangler d1 migrations apply vs-orders --remote",
+    "db:seed:local": "wrangler d1 execute vs-orders --local --file seed/menu.sql",
+    "db:seed:remote": "wrangler d1 execute vs-orders --remote --file seed/menu.sql",
+    "deploy": "wrangler pages deploy",
+    "test": "node --test --no-warnings test/unit.test.mjs",
+    "test:smoke": "node test/smoke.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.137.0"
+  }
+}
