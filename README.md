@@ -4,6 +4,8 @@ A WordPress plugin built for **Visit Sicily NYC** that powers a weekly personal 
 
 Built to be **generic and reusable** for any food business that does scheduled/weekly deliveries.
 
+> **Standalone version (no WordPress):** [`standalone/`](standalone/README.md) runs the same system on Cloudflare Pages + D1, with Cloudflare Access for the admin panel and a migration script for existing WordPress data.
+
 ---
 
 ## How It Works (Business Model)
